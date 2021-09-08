@@ -1,47 +1,28 @@
 import React from "react";
+import "./productList.css";
 import { Space, Card, Button } from "antd";
-import "antd/dist/antd.css";
+
+const { Meta } = Card;
 
 function productList() {
   return (
     <>
-      <Space size={[8, 16]} wrap>
-        {new Array(20).fill(null).map((_, index) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <Button key={index}>Button</Button>
-        ))}
-
-        <Button>Default Button</Button>
-        <Card
-          hoverable
-          style={{ width: 240 }}
-          cover={
-            <img
-              alt="example"
-              src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-            />
-          }
-        ></Card>
-        <Card
-          title="Default size card"
-          extra={<a href="#">More</a>}
-          style={{ width: 300 }}
-        >
-          <p>Card content</p>
-          <p>Card content</p>
-          <p>Card content</p>
-        </Card>
-        <Card
-          size="small"
-          title="Small size card"
-          extra={<a href="#">More</a>}
-          style={{ width: 300 }}
-        >
-          <p>Card content</p>
-          <p>Card content</p>
-          <p>Card content</p>
-        </Card>
-      </Space>
+      <div className="contentList">
+        <Space size={[8, 16]} wrap>
+          {new Array(20).fill(null).map((_, index) => (
+            <Card
+              key={index}
+              hoverable
+              style={{ width: 240 }}
+              cover={
+                <img src="https://pbs.twimg.com/profile_images/1193911104377778177/pK9zJgAf_400x400.jpg" />
+              }
+            >
+              <Meta title="정호비" description="www.instagram.com" />
+            </Card>
+          ))}
+        </Space>
+      </div>
     </>
   );
 }

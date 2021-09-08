@@ -1,0 +1,10 @@
+.contentList {
+  background-color: #fafafa;
+  height: 100%;
+  padding: 10vw;
+}
+
+.ant-space {
+  display: inline-flex;
+  justify-content: center;
+}

@@ -1,0 +1,10 @@
+.headerBox {
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  align-items: center;
+  display: flex;
+  background: #ffffff;
+  float: left;
+  height: 55px;
+}

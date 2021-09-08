@@ -14,12 +14,10 @@ function App() {
   return (
     <div>
       <Header />
-      {/* <div>
-        <BrowserRouter>
-          <Route path="/list" component={productList} exact={true} />
-          <Route path="/" component={Main} exact={true} />
-        </BrowserRouter>
-      </div> */}
+      <div>
+        <Route path="/list" component={productList} exact={true} />
+        <Route path="/" component={Main} exact={true} />
+      </div>
     </div>
   );
 }
