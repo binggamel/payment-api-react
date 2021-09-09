@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import "./pDetail.css";
 import {
   Space,
@@ -14,11 +14,39 @@ import {
 const { Title } = Typography;
 const { Option } = Select;
 
-function handleChange(value) {
+function handleChangeP(value) {
   console.log(`selected ${value}`);
 }
 
-function productDetail() {
+function onChangeN(value) {
+  console.log("changed", value);
+}
+
+function ProductDetail() {
+  /*
+  const [product, setProduct] = useState("test");
+  const [number, setNumber] = useState(1);
+  const nextId = useRef(0);
+
+  const [selected, setSelected] = useState([nextId.current, product, number]);
+
+  function handleChangeP(value) {
+    setProduct(value);
+    console.log(`selected ${value}`);
+    // onCreate(value);
+  }
+
+  const onCreate = (e) => {
+    // setSelected({
+    //   ...selected,
+    //   product: value,
+    // });
+    setSelected((selected) => [...selected, nextId.current, product, number]);
+    nextId.current += 1;
+    setProduct("");
+  };
+   */
+
   return (
     <div className="contentList">
       <Space align="start">
@@ -28,7 +56,7 @@ function productDetail() {
         />
         <Space direction="vertical">
           <Card style={{ width: "100%" }}>
-            <Title style={{ margin: 0 }}>쌈자. 정호석</Title>
+            <Title style={{ margin: 0 }}>제이어쩌구</Title>
             <Title level={4} style={{ float: "right", margin: 10 }}>
               3,000 ₩
             </Title>
@@ -43,21 +71,31 @@ function productDetail() {
             제주, 도서지역 추가 3,000원
           </p>
           <Divider style={{ marginTop: 0 }} />
-          <Select
-            defaultValue="맥북"
-            style={{ width: "100%" }}
-            onChange={handleChange}
-          >
-            <Option value="맥북">맥북</Option>
-            <Option value="아이패드">아이패드</Option>
-            <Option value="애플워치">애플워치</Option>
-          </Select>
-          <Divider style={{ marginTop: 0 }} />
+          <Space align="start" style={{ width: "100%" }}>
+            <Select
+              // defaultValue="맥북"
+              placeholder="제품을 선택하세요!"
+              style={{ width: "100%" }}
+              onChange={handleChangeP}
+            >
+              <Option value="맥북">맥북</Option>
+              <Option value="아이패드">아이패드</Option>
+              <Option value="애플워치">애플워치</Option>
+            </Select>
+            <InputNumber
+              min={1}
+              max={5}
+              defaultValue={1}
+              onChange={onChangeN}
+            />
+            <Button>추가</Button>
+          </Space>
+          <Divider />
 
           <Space align="start">
-            <Button>asdf</Button>
-            <Button>asdf</Button>
-            <Button>asdf</Button>
+            <Button>test</Button>
+            <Button>test</Button>
+            <Button>test</Button>
           </Space>
         </Space>
       </Space>
@@ -67,4 +105,4 @@ function productDetail() {
   );
 }
 
-export default productDetail;
+export default ProductDetail;
