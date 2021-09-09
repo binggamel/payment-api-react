@@ -8,6 +8,8 @@ import {
 
 import Header from "./Header";
 import productList from "./views/productList";
+import productDetail from "./views/productDetail";
+
 import Main from "./views/Main";
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
       <Header />
       <div>
         <Route path="/list" component={productList} exact={true} />
+        <Route path="/list/1" component={productDetail} exact={true} />
         <Route path="/" component={Main} exact={true} />
       </div>
     </div>

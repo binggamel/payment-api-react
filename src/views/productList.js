@@ -1,17 +1,24 @@
 import React from "react";
 import "./productList.css";
 import { Space, Card, Button } from "antd";
+import { Link } from "react-router-dom";
 
 const { Meta } = Card;
 
 function productList() {
+  function activeLink(index) {
+    console.log("click");
+    // window.location.href = "/list/" + index;
+  }
+
   return (
     <>
       <div className="contentList">
         <Space size={[8, 16]} wrap>
-          {new Array(20).fill(null).map((_, index) => (
+          {new Array(21).fill(null).map((_, index) => (
             <Card
               key={index}
+              onClick={activeLink(index)}
               hoverable
               style={{ width: 240 }}
               cover={
