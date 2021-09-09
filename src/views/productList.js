@@ -6,9 +6,12 @@ import { Link } from "react-router-dom";
 const { Meta } = Card;
 
 function productList() {
-  function activeLink(index) {
-    console.log("click");
-    // window.location.href = "/list/" + index;
+  function activeLink(e) {
+    const index = e + 1;
+    console.log(index);
+    return () => {
+      window.location.href = "/list/" + index;
+    };
   }
 
   return (
@@ -17,7 +20,7 @@ function productList() {
         <Space size={[8, 16]} wrap>
           {new Array(21).fill(null).map((_, index) => (
             <Card
-              key={index}
+              key={index + 1}
               onClick={activeLink(index)}
               hoverable
               style={{ width: 240 }}
