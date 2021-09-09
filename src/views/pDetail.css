@@ -3,3 +3,18 @@
   height: 100%;
   padding: 10vw;
 }
+
+@media screen and (max-width: 800px) {
+  .contentSpace {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .productImg {
+    width: 100%;
+  }
+  .ant-space-item .ant-image {
+    width: 100%;
+  }
+}
