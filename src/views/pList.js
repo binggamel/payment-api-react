@@ -1,5 +1,5 @@
 import React from "react";
-import "./productList.css";
+import "./pList.css";
 import { Space, Card, Button } from "antd";
 import { Link } from "react-router-dom";
 
