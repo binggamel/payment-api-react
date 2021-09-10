@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
-import "./pDetail.css";
+import style from "./pDetail.module.css";
+import styled from "styled-components";
 import {
   Space,
   Card,
@@ -24,14 +25,18 @@ function onChangeN(value) {
 
 function ProductDetail() {
   return (
-    <div className="contentList">
-      <Space align="start" style={{ width: "100%" }} className="contentSpace">
+    <div className={style.contentList}>
+      <Space
+        align="start"
+        style={{ width: "100%" }}
+        className={style.contentSpace}
+      >
         <Image
-          className="productImg"
+          className={style.productImg}
           width={470}
           src="http://file3.instiz.net/data/cached_img/upload/2018/11/25/20/1362973dfdab97c232de1cfb0a95608d.jpg"
         />
-        <Space direction="vertical" style={{ width: "100%" }}>
+        <Space direction="vertical">
           <Card style={{ width: "100%" }}>
             <Title style={{ margin: 0 }}>상품 이름</Title>
             <Title level={4} style={{ float: "right", margin: 10 }}>
