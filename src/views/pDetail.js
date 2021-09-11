@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import style from "./pDetail.module.css";
-import styled from "styled-components";
 import {
   Space,
   Card,
@@ -24,6 +23,8 @@ function onChangeN(value) {
 }
 
 function ProductDetail() {
+  const [number, setNumber] = useState(1);
+
   return (
     <div className={style.contentList}>
       <Space
