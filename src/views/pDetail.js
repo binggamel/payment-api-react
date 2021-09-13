@@ -23,7 +23,39 @@ function onChangeN(value) {
 }
 
 function ProductDetail() {
-  const [number, setNumber] = useState(1);
+  const [selects, setSelects] = useState({
+    name: "",
+    num: "",
+  });
+
+  const { name, num } = selects;
+
+  // const [number, setNumber] = useState(1);
+
+  const [selectProducts, setSelectProducts] = useState([
+    {
+      id: "1",
+      name: "아이패드",
+      num: 1,
+    },
+  ]);
+
+  const nextId = useState(2);
+  const onCreate = () => {
+    //새롭게 배열 데이터를 추가하는 함수
+    const SelectProduct = {
+      id: nextId.current,
+      name,
+      num,
+    };
+    setSelectProducts([...selectProducts, SelectProduct]);
+
+    setSelects({
+      name: "",
+      num: "",
+    });
+    nextId.current += 1;
+  };
 
   return (
     <div className={style.contentList}>
