@@ -31,7 +31,17 @@ function ProductDetail() {
 
   const { name, num } = selects;
 
-  // const [number, setNumber] = useState(1);
+  const onDataChange = (value) => {
+    // console.log(e);
+
+    // console.log(value.targnet);
+
+    setSelects({
+      ...selects,
+      name: value,
+      num: value,
+    });
+  };
 
   const [selectProducts, setSelectProducts] = useState([
     //배열 처리
@@ -90,7 +100,9 @@ function ProductDetail() {
             <Select
               placeholder="제품을 선택하세요!"
               style={{ width: 150 }}
-              onChange={handleChangeP}
+              name="name"
+              value={name}
+              onChange={onDataChange}
             >
               <Option value="맥북">맥북</Option>
               <Option value="아이패드">아이패드</Option>
@@ -100,7 +112,9 @@ function ProductDetail() {
               min={1}
               max={5}
               defaultValue={1}
-              onChange={handleChangeN}
+              name="num"
+              value={num}
+              onChange={onDataChange}
             />
             <Button onClick={onCreate}>추가</Button>
           </Space>
