@@ -8,7 +8,7 @@ const { Meta } = Card;
 function productList() {
   function activeLink(e) {
     const index = e + 1;
-    console.log(index);
+    // console.log(index);
     return () => {
       window.location.href = "/list/" + index;
     };

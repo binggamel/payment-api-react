@@ -14,13 +14,13 @@ import {
 const { Title } = Typography;
 const { Option } = Select;
 
-function handleChangeP(value) {
-  console.log(`품명 ${value}`);
-}
+// function handleChangeP(value) {
+//   console.log(`품명 ${value}`);
+// }
 
-function handleChangeN(value) {
-  console.log(`수량 ${value}`);
-}
+// function handleChangeN(value) {
+//   console.log(`수량 ${value}`);
+// }
 
 function ProductDetail() {
   const [selects, setSelects] = useState({
