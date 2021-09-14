@@ -15,15 +15,16 @@ const { Title } = Typography;
 const { Option } = Select;
 
 function handleChangeP(value) {
-  console.log(`selected ${value}`);
+  console.log(`품명 ${value}`);
 }
 
-function onChangeN(value) {
-  console.log("changed", value);
+function handleChangeN(value) {
+  console.log(`수량 ${value}`);
 }
 
 function ProductDetail() {
   const [selects, setSelects] = useState({
+    //입력값 동시 처리
     name: "",
     num: "",
   });
@@ -33,6 +34,7 @@ function ProductDetail() {
   // const [number, setNumber] = useState(1);
 
   const [selectProducts, setSelectProducts] = useState([
+    //배열 처리
     {
       id: "1",
       name: "아이패드",
@@ -40,7 +42,7 @@ function ProductDetail() {
     },
   ]);
 
-  const nextId = useState(2);
+  const nextId = useRef(2);
   const onCreate = () => {
     //새롭게 배열 데이터를 추가하는 함수
     const SelectProduct = {
@@ -98,11 +100,20 @@ function ProductDetail() {
               min={1}
               max={5}
               defaultValue={1}
-              onChange={onChangeN}
+              onChange={handleChangeN}
             />
-            <Button>추가</Button>
+            <Button onClick={onCreate}>추가</Button>
           </Space>
+
           <Divider style={{ marginBottom: 0 }} />
+          <div>
+            {selectProducts.map((selectProduct) => (
+              <div>
+                {selectProduct.name} | {selectProduct.num} | {selectProduct.id}
+                <Divider />
+              </div>
+            ))}
+          </div>
           <Divider style={{ marginTop: 0 }} />
           <Space
             align="center"
@@ -115,6 +126,7 @@ function ProductDetail() {
               3,000 원
             </Title>
           </Space>
+
           <Divider />
 
           <Space align="start">
