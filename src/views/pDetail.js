@@ -31,28 +31,28 @@ function ProductDetail() {
 
   const { name, num } = selects;
 
-  const onDataChange = (value) => {
-    // console.log(e);
-
-    // console.log(value.targnet);
-
+  const onDataChangeP = (value) => {
+    console.log(value);
     setSelects({
       ...selects,
       name: value,
+    });
+  };
+
+  const onDataChangeN = (value) => {
+    console.log(value);
+    setSelects({
+      ...selects,
       num: value,
     });
   };
 
   const [selectProducts, setSelectProducts] = useState([
     //배열 처리
-    {
-      id: "1",
-      name: "아이패드",
-      num: 1,
-    },
+    {},
   ]);
 
-  const nextId = useRef(2);
+  const nextId = useRef(1);
   const onCreate = () => {
     //새롭게 배열 데이터를 추가하는 함수
     const SelectProduct = {
@@ -67,6 +67,11 @@ function ProductDetail() {
       num: "",
     });
     nextId.current += 1;
+  };
+
+  const onRemove = (id) => {
+    //setUsers(users.filter(user => user.id !== id));
+    setSelectProducts(selectProducts.filter((selects) => selects.id !== id));
   };
 
   return (
@@ -100,9 +105,8 @@ function ProductDetail() {
             <Select
               placeholder="제품을 선택하세요!"
               style={{ width: 150 }}
-              name="name"
-              value={name}
-              onChange={onDataChange}
+              onChange={onDataChangeP}
+              required
             >
               <Option value="맥북">맥북</Option>
               <Option value="아이패드">아이패드</Option>
@@ -112,9 +116,8 @@ function ProductDetail() {
               min={1}
               max={5}
               defaultValue={1}
-              name="num"
-              value={num}
-              onChange={onDataChange}
+              onChange={onDataChangeN}
+              required
             />
             <Button onClick={onCreate}>추가</Button>
           </Space>
@@ -124,6 +127,7 @@ function ProductDetail() {
             {selectProducts.map((selectProduct) => (
               <div>
                 {selectProduct.name} | {selectProduct.num} | {selectProduct.id}
+                <Button onClick={() => onRemove(selectProduct.id)}>x</Button>
                 <Divider />
               </div>
             ))}
