@@ -49,24 +49,28 @@ function ProductDetail() {
 
   const [selectProducts, setSelectProducts] = useState([
     //배열 처리
-    {},
   ]);
 
   const nextId = useRef(1);
   const onCreate = () => {
     //새롭게 배열 데이터를 추가하는 함수
-    const SelectProduct = {
-      id: nextId.current,
-      name,
-      num,
-    };
-    setSelectProducts([...selectProducts, SelectProduct]);
 
-    setSelects({
-      name: "",
-      num: "",
-    });
-    nextId.current += 1;
+    if (name == "" || num == "") {
+      alert("필수 선택입니다!");
+    } else {
+      const SelectProduct = {
+        id: nextId.current,
+        name,
+        num,
+      };
+      setSelectProducts([...selectProducts, SelectProduct]);
+
+      setSelects({
+        name: "",
+        num: "",
+      });
+      nextId.current += 1;
+    }
   };
 
   const onRemove = (id) => {
