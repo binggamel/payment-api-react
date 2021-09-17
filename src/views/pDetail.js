@@ -32,7 +32,6 @@ function ProductDetail() {
   const { name, num } = selects;
 
   const onDataChangeP = (value) => {
-    console.log(value);
     setSelects({
       ...selects,
       name: value,
@@ -40,7 +39,6 @@ function ProductDetail() {
   };
 
   const onDataChangeN = (value) => {
-    console.log(value);
     setSelects({
       ...selects,
       num: value,
@@ -67,7 +65,7 @@ function ProductDetail() {
 
       setSelects({
         name: "",
-        num: "",
+        num: "1",
       });
       nextId.current += 1;
     }
@@ -76,6 +74,10 @@ function ProductDetail() {
   const onRemove = (id) => {
     //setUsers(users.filter(user => user.id !== id));
     setSelectProducts(selectProducts.filter((selects) => selects.id !== id));
+  };
+
+  const onBasket = () => {
+    selectProducts.map((selectProduct) => console.log(selectProduct.name));
   };
 
   return (
@@ -153,7 +155,7 @@ function ProductDetail() {
 
           <Space align="start">
             <Button>구매하기</Button>
-            <Button>장바구니</Button>
+            <Button onClick={onBasket}>장바구니</Button>
             <Button>찜하기</Button>
           </Space>
         </Space>
