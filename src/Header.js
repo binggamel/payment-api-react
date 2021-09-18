@@ -17,7 +17,10 @@ function header() {
             </Link>
           </Li>
           <Li id="apply_1">
-            <Link to="/list">productList</Link>
+            <Link to="/list">ProductList</Link>
+          </Li>
+          <Li id="login">
+            <Link to="/login">Login</Link>
           </Li>
         </Ul>
       </div>

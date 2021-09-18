@@ -10,12 +10,14 @@ import Header from "./Header";
 import productList from "./views/pList";
 import productDetail from "./views/pDetail";
 import Main from "./views/Main";
+import Login from "./views/Login";
 
 function App() {
   return (
     <div>
       <Header />
       <div>
+        <Route path="/login" component={Login} exact={true} />
         <Route path="/list" component={productList} exact={true} />
         <Route path="/list/:index" component={productDetail} exact={true} />
         <Route path="/" component={Main} exact={true} />
