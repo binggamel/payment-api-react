@@ -6,7 +6,7 @@
 .pnp.js
 /.env
 .env
-/views/GoogleLogin.js
+/src/views/GoogleLogin.js
 
 # testing
 /coverage
