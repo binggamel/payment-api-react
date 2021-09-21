@@ -77,7 +77,9 @@ function ProductDetail() {
   };
 
   const onBasket = () => {
-    selectProducts.map((selectProduct) => console.log(selectProduct.name));
+    selectProducts.map((selectProduct) =>
+      console.log(selectProduct.name + ", " + selectProduct.num)
+    );
   };
 
   return (
