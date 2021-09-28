@@ -53,7 +53,7 @@ function ProductDetail() {
   const onCreate = () => {
     //새롭게 배열 데이터를 추가하는 함수
 
-    if (name == "" || num == "") {
+    if (name === "" || num === "") {
       alert("필수 선택입니다!");
     } else {
       const SelectProduct = {

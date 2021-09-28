@@ -7,7 +7,7 @@ const { Meta } = Card;
 
 function productList() {
   function activeLink(e) {
-    const index = e + 1;
+    const index = e;
     // console.log(index);
     return () => {
       window.location.href = "/list/" + index;
@@ -21,7 +21,7 @@ function productList() {
           {new Array(21).fill(null).map((_, index) => (
             <Card
               key={index + 1}
-              onClick={activeLink(index)}
+              onClick={activeLink(index + 1)}
               hoverable
               style={{ width: 240 }}
               cover={
